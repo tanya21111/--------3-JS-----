@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function generateTable() {
+            const table = document.getElementById('random-table');
+            for (let i = 0; i < 3; i++) {
+                const row = table.insertRow();
+                for (let j = 0; j < 3; j++) {
+                    const cell = row.insertCell();
+                    cell.textContent = Math.random() > 0.5 ? '+' : 'o';
+                }
+            }
+        }
+        window.onload = generateTable;
+    </script>
+</head>
+<body>
+    <h1>Задание 1: Таблица 3x3</h1>
+    <table id="random-table" border="1"></table>
+    <a href="index.html">Назад</a>
+</body>
+</html>

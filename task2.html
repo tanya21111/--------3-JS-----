@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function MonthName(month) {
+            const months = [
+                "Январь", "Февраль", "Март", "Апрель", 
+                "Май", "Июнь", "Июль", "Август", 
+                "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+            ];
+            return months[month];
+        }
+
+        function displayDate() {
+            const now = new Date();
+            const day = now.getDate();
+            const month = MonthName(now.getMonth());
+            const year = now.getFullYear();
+            const dayOfWeek = now.getDay();
+
+            const dateElement = document.getElementById('date-display');
+            const color = (dayOfWeek === 0 || dayOfWeek === 6) ? 'red' : 'black';
+
+            dateElement.style.color = color;
+            dateElement.textContent = `${day} ${month} ${year}`;
+        }
+        window.onload = displayDate;
+    </script>
+</head>
+<body>
+    <h1>Задание 2: Отображение даты</h1>
+    <p id="date-display"></p>
+    <a href="index.html">Назад</a>
+</body>
+</html>

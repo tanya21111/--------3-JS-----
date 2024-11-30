@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            const inputs = document.querySelectorAll('.form-input');
+            for (const input of inputs) {
+                if (!input.value.trim()) {
+                    alert('Ошибка: Все поля должны быть заполнены.');
+                    input.focus();
+                    return;
+                }
+            }
+            alert("О'кей");
+        }
+    </script>
+</head>
+<body>
+    <h1>Задание 3: Проверка формы</h1>
+    <form onsubmit="validateForm(event)">
+        <input type="text" class="form-input" placeholder="Введите текст"><br>
+        <input type="text" class="form-input" placeholder="Введите текст"><br>
+        <input type="text" class="form-input" placeholder="Введите текст"><br>
+        <input type="text" class="form-input" placeholder="Введите текст"><br>
+        <input type="text" class="form-input" placeholder="Введите текст"><br>
+        <button type="submit">Проверить</button>
+    </form>
+    <a href="index.html">Назад</a>
+</body>
+</html>
